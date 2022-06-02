@@ -1,0 +1,16 @@
+  <h1>{{message}}</h1>
+  <h1> Todos </h1>
+  <ul *ngFor="let todo of todos">
+    <li>{{todo.todo}}</li>
+  </ul>
+  <form #todoForm="ngForm" (ngSubmit)="addTodo(todoForm)">
+    <div class="mb-3">
+      <input type="string" id="todo_input" name = "todo" [(ngModel)]= "todo_item" class="form-control"  placeholder="Input your task">
+      <button>+Add Task</button>  
+      <button>Delete Task</button>
+      <button>Update Task</button>
+    </div>
+  </form>
+  
+  
+  {{todoForm.value | json}}
